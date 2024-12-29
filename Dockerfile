@@ -1,13 +1,23 @@
-# Step 1: Use official lightweight Python image as base OS.
-FROM tiangolo/uvicorn-gunicorn:python3.8-slim
+# Usa una imagen base oficial de Python
+FROM python:3.8-slim
 
-# Step 2. Copy local code to the container image.
+# Establece el directorio de trabajo en el contenedor
 WORKDIR /app
-COPY . .
 
-# Step 3. Install production dependencies.
+# Copia el archivo requirements.txt al contenedor
+COPY requirements.txt .
+
+# Instala las dependencias del archivo requirements.txt
 RUN pip install -r requirements.txt
 
-# Step 4: Run the web service on container startup using gunicorn webserver.
+# Copia todo el código de tu aplicación al contenedor
+COPY . .
+
+# Establece la variable de entorno para el puerto
 ENV PORT=8080
-CMD gunicorn app2:app  --bind 0.0.0.0:$PORT --worker-class uvicorn.workers.UvicornWorker
+
+# Exponer el puerto 8080
+EXPOSE 8080
+
+# Comando para ejecutar la aplicación FastAPI con uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
