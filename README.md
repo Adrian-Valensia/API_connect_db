@@ -26,6 +26,7 @@ Para construir la imagen de Docker para la aplicación FastAPI, usa el siguiente
 
 ```bash
 docker build -t movie_fastapi . 
+```
 
 ### 2. Crear y Ejecutar los Contenedores con Docker Compose
 
@@ -36,30 +37,35 @@ Primero, asegúrate de tener el archivo docker-compose.yml configurado correctam
 a) Comando para Iniciar los Contenedores
 Usa el siguiente comando para iniciar los servicios definidos en docker-compose.yml:
 
-bash
+```bash
 docker-compose up
+```
 
 Este comando descargará las imágenes necesarias (si no están ya en tu máquina), construirá los contenedores y los pondrá en marcha. FastAPI se ejecutará en el puerto 8000 y PostgreSQL estará disponible en el puerto 5432.
 
 b) Comando para Iniciar los Contenedores en Segundo Plano
 Si prefieres ejecutar los contenedores en segundo plano, puedes usar:
 
-bash
+```bash
 Copiar código
 docker-compose up -d
+```
+
 c) Verificar los Logs
 Para ver los logs de la aplicación FastAPI o PostgreSQL, usa el siguiente comando:
 
-bash
+```bash
 docker-compose logs api  # Logs del contenedor de FastAPI
 docker-compose logs db   # Logs del contenedor de PostgreSQL
+```
 
 ### 3. Conectar a la Base de Datos
 
 Si necesitas conectarte al contenedor de PostgreSQL desde otro contenedor o tu máquina, usa el siguiente comando:
 
-bash
+```bash
 docker-compose exec db psql -U tu_usuario -d tu_db
+```
 
 Esto te permitirá interactuar con la base de datos dentro del contenedor de PostgreSQL.
 
@@ -77,10 +83,12 @@ Asegúrate de que estos parámetros estén correctamente configurados en tu arch
 Detener los Contenedores
 Cuando hayas terminado de trabajar, puedes detener y eliminar los contenedores con el siguiente comando:
 
-bash
+```bash
 docker-compose down
+```
 
 Para eliminar también los volúmenes, usa:
 
-bash
+```bash
 docker-compose down -v
+```
