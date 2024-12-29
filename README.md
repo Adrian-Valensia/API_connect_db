@@ -2,9 +2,9 @@
 
 Para este proyecto, deberán utilizar Docker (ya sea localmente o en la nube) para ejecutar dos contenedores:<br>
 
-**1.**API usando Flask o FastAPI desarrollado por el estudiante. <br>
+**1.** API usando Flask o FastAPI desarrollado por el estudiante. <br>
 
-**2.**Una base de datos relacional o no relaciones según preferencia (MySQL, Postgres, MongoDB,etc). Usar imagen de Docker Hub. Se deberá crear un dataset llamado my_collections, donde se tendrá una tabla my_movies con los campos “ID”, “Autor”, “Descripción”, y “Fecha de Estreno”
+**2.** Una base de datos relacional o no relaciones según preferencia (MySQL, Postgres, MongoDB,etc). Usar imagen de Docker Hub. Se deberá crear un dataset llamado my_collections, donde se tendrá una tabla my_movies con los campos “ID”, “Autor”, “Descripción”, y “Fecha de Estreno”
 El API desarrollado debe implementar los métodos GET, POST, PUT y DELETE, y cada uno de ellos deberá realizar lo siguiente: <br>
 
 •**Método GET**: Leer datos de la BD. Puede codificarlo para obtener solo un dato de alguna fila con un id especifico, o puede codificarlo para obtener todo el dataset. <br>
@@ -66,7 +66,7 @@ docker-compose exec db psql -U tu_usuario -d tu_db
 
 Esto te permitirá interactuar con la base de datos dentro del contenedor de PostgreSQL.
 
-Configuración de la Base de Datos en FastAPI
+**Configuración de la Base de Datos en FastAPI**
 
 El contenedor de FastAPI se conecta a la base de datos PostgreSQL usando los siguientes parámetros de conexión:
 
