@@ -25,9 +25,10 @@ Método DELETE: Borrar datos de la BD. Codificarlo para que borre un elemento es
 Para construir la imagen de Docker para la aplicación FastAPI, usa el siguiente comando en la raíz del proyecto donde se encuentra el `Dockerfile`:
 
 ```bash
-docker build -t movie_fastapi .
+docker build -t movie_fastapi . 
 
-## Crear y Ejecutar los Contenedores con Docker Compose
+### 2. Crear y Ejecutar los Contenedores con Docker Compose
+
 Si prefieres usar Docker Compose para iniciar tanto el contenedor de PostgreSQL como el de FastAPI, utiliza los siguientes comandos.
 
 Primero, asegúrate de tener el archivo docker-compose.yml configurado correctamente. Este archivo contiene los servicios de FastAPI (API) y PostgreSQL (db).
@@ -53,7 +54,7 @@ bash
 docker-compose logs api  # Logs del contenedor de FastAPI
 docker-compose logs db   # Logs del contenedor de PostgreSQL
 
-## 3. Conectar a la Base de Datos
+### 3. Conectar a la Base de Datos
 
 Si necesitas conectarte al contenedor de PostgreSQL desde otro contenedor o tu máquina, usa el siguiente comando:
 
